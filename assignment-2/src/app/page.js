@@ -5,7 +5,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between bg-purple-200 text-black">
         <div class="w-screen h-12 border-b-black-2 text-center flex justify-evenly">
             <div class="w-1/3 border-r-black-2 pr-5 text-white bg-purple-800 pt-3">
-              
+              <image class="w-100 h-100" src="/images/logo.png" alt="J.A.W.N Academy Logo"></image>
             </div>
             <div class="w-1/3 border-r-black-2 pr-5 bg-purple-200 text-gray-700 font-bold pt-3 text-4x1">
                 <a class="text-center" href="index.html">Homepage</a>
@@ -54,8 +54,6 @@ export default function Home() {
               <p>8888 RIVER VIEW PKWY SW, Calgary, AB, Canada, T2T 2T2</p>
             </div>
           </div>
-
-
         </div>
       </footer>
     </main>
