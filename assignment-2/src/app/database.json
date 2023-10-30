@@ -1,3 +1,62 @@
 {
-    "students":[]
+    "students" : [
+        "id",
+        "first-name",
+        "last-name",
+        "birth-year",
+        "birth-month",
+        "birth-day",
+        "grade"
+    ],
+
+    "matt" : {
+        "id": 1,
+        "first-name": "Matthew",
+        "last-name": "Simms",
+        "birth-year": 2004,
+        "birth-month": 5,
+        "birth-day": 21,
+        "grade": 12
+    },
+
+    "bryan" : {
+        "id": 2,
+        "first-name": "Ryan",
+        "last-name": "Clarkson",
+        "birth-year": 2003,
+        "birth-month": 7,
+        "birth-day": 8,
+        "grade": 12
+    },
+
+    "theo" : {
+        "id": 3,
+        "first-name": "Theodore",
+        "last-name": "Wells",
+        "birth-year": 2002,
+        "birth-month": 2,
+        "birth-day": 28,
+        "grade": 10
+    },
+
+    "bart" : {
+        "id": 4,
+        "first-name": "Bartholemue",
+        "last-name": "The Great",
+        "birth-year": 1865,
+        "birth-month": 9,
+        "birth-day": 21,
+        "grade" : 152
+    },
+
+    "wendy" : {
+        "id": 5,
+        "first-name": "Wendy",
+        "last-name": "White",
+        "birth-year": 1987,
+        "birth-month": 4,
+        "birth-day": 30,
+        "grade": 30
+    }
+    
 }
