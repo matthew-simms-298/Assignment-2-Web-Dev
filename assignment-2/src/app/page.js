@@ -1,5 +1,5 @@
 import StandardFooter from '../components/StandardFooter';
-import StudentNames from '../components/StudentNames';
+import Student from '../components/Student';
 
 
 export default function Home() {
@@ -13,9 +13,9 @@ export default function Home() {
                 <a class="text-center" href="../configuration">Students</a>
             </div>
         </div>
-      <div className="bg-gray-100 p-10 m-10 rounded-lg shadow-lg">
-        <h1>Student List</h1>
-       {/*<StudentNames/>*/}
+      <div className="bg-gray-100 p-10 m-10 w-1/3 flex items-center justify-center flex-col rounded-lg shadow-lg">
+        <h1 className="mb-5 text-2xl">Student List</h1>
+       <Student/>
       </div>
       <StandardFooter/>  
     </main>
