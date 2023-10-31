@@ -2,6 +2,64 @@
 import StandardFooter from "@/components/StandardFooter";
 import React, {useState} from 'react'
 
+import StandardFooter from "@/components/StandardFooter";
+import React, { useState, useEffect } from 'react'
+
+export default function Configuration() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    birthYear: "",
+    brithMonth: "",
+    brithDay: "",
+    grade: "",
+  });
+
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    async function loadData() {
+      await fetch("http://localhost:5000/students")
+        .then((response) => response.json())
+        .then((data) => setFormData(data));
+    }
+    loadData();
+  }, []);
+
+  const handleInputChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await fetch("http://Localhost:5000/students", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      setMessage("Student registered successfully!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        birthYear: "",
+        brithMonth: "",
+        brithDay: "",
+        grade: "",
+      });
+    } catch (error) {
+      setMessage("ERROR");
+    }
+  };
+
+  // Rest of the code...
+}
+{/*
 export default function Configuration() {
   async function loadData() {
     const response = await fetch("http://localhost:5000/students")
@@ -56,6 +114,8 @@ export default function Configuration() {
       setMessage("ERROR");
     }
   };
+*/}
+
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-purple-200 text-black">
