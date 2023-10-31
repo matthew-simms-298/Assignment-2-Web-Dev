@@ -21,11 +21,11 @@ export default function Configuration() {
   };
 
   const [message, setMessage] = useState("");
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+
+  const handleInputChange = (event) => {
     setFormData({
       ...formData,
-      [name]: value,
+      [event.target.name]: event.target.value
     });
   };
 
@@ -73,7 +73,7 @@ export default function Configuration() {
         <h1 className="text-4xl font-bold text-center p-1 mb-15">
           Add Student Information
         </h1>
-        <form onSubmit={handleSubmit()}>
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-center justify-center">
             <label htmlFor="FirstName">First Name:</label>
             <input
@@ -81,6 +81,7 @@ export default function Configuration() {
               id="FirstName"
               name="FirstName"
               value={formData.firstName}
+              onChange={handleInputChange}
               placeholder="Example: Marcus"
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
               required
@@ -88,30 +89,24 @@ export default function Configuration() {
             <label htmlFor="LastName">Last Name:</label>
             <input
               type="text"
-              id="LastName"
-              name="LastName"
+              id="lastName"
+              name="lastName"
               value={formData.lastName}
-              onChange={handleInputChange()}
+              onChange={handleInputChange}
               placeholder="Example: DeMaximus"
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
               required
             />
             <p>Birthdate:</p>
             <p className="text-xs italic text-grey-300">Year, Month, Day</p>
+
             <div className="">
-              {/*
-                            <div>
-                                <label htmlFor="birthyear">Year: </label>
-                                <label htmlFor="birthmonth">Month: </label>
-                                <label htmlFor="birthday">Day: </label>
-                            </div>
-                            */}
               <div>
                 <input
                   type="text"
-                  id="birthyear"
-                  name="birthyear"
-                  onChange={handleInputChange()}
+                  id="birthYear"
+                  name="birthYear"
+                  onChange={handleInputChange}
                   placeholder="2023"
                   value={formData.birthYear}
                   className="border border-gray-500 rounded-md p-1 m-1 w-12 hover:bg-purple-200"
@@ -122,7 +117,7 @@ export default function Configuration() {
                   id="birthday"
                   name="birthday"
                   placeholder="10"
-                  onChange={handleInputChange()}
+                  onChange={handleInputChange}
                   value={formData.brithDaye}
                   className="border border-gray-500 rounded-md p-1 m-1 w-7 hover:bg-purple-200"
                   required
@@ -131,7 +126,7 @@ export default function Configuration() {
                   type="text"
                   id="birthmonth"
                   name="birthmonth"
-                  onChange={handleInputChange()}
+                  onChange={handleInputChange}
                   placeholder="12"
                   value={formData.brithMonth}
                   className="border border-gray-500 rounded-md p-1 m-1 w-7 hover:bg-purple-200"
@@ -146,7 +141,7 @@ export default function Configuration() {
               id="grade"
               name="grade"
               placeholder="12"
-              onChange={handleInputChange()}
+              onChange={handleInputChange}
               value={formData.grade}
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
               required
