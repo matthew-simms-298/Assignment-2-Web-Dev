@@ -1,9 +1,6 @@
-'use client'
+"use client";
 import StandardFooter from "@/components/StandardFooter";
-import React, {useState} from 'react'
-
-import StandardFooter from "@/components/StandardFooter";
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 export default function Configuration() {
   const [formData, setFormData] = useState({
@@ -29,7 +26,7 @@ export default function Configuration() {
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -58,8 +55,9 @@ export default function Configuration() {
   };
 
   // Rest of the code...
-}
-{/*
+  // Matt: I dont think we'll need it but for now we need to figure out how to get the db connected
+  {
+    /*
 export default function Configuration() {
   async function loadData() {
     const response = await fetch("http://localhost:5000/students")
@@ -114,8 +112,8 @@ export default function Configuration() {
       setMessage("ERROR");
     }
   };
-*/}
-
+*/
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-purple-200 text-black">
@@ -133,16 +131,17 @@ export default function Configuration() {
         <h1 className="text-4xl font-bold text-center p-1 mb-15">
           Add Student Information
         </h1>
+
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-center justify-center">
             <label htmlFor="FirstName">First Name:</label>
             <input
               type="text"
-              id="FirstName"
-              name="FirstName"
+              id="firstName"
+              name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              placeholder="Example: Marcus"
+              placeholder="Example: DeMaximus"
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
               required
             />
@@ -174,21 +173,21 @@ export default function Configuration() {
                 />
                 <input
                   type="text"
-                  id="birthday"
-                  name="birthday"
-                  placeholder="10"
+                  id="birthMonth"
+                  name="birthMonth"
                   onChange={handleInputChange}
-                  value={formData.brithDaye}
+                  placeholder="5"
+                  value={formData.birthMonth}
                   className="border border-gray-500 rounded-md p-1 m-1 w-7 hover:bg-purple-200"
                   required
                 />
                 <input
                   type="text"
-                  id="birthmonth"
-                  name="birthmonth"
+                  id="birthDay"
+                  name="birthDay"
                   onChange={handleInputChange}
                   placeholder="12"
-                  value={formData.brithMonth}
+                  value={formData.birthDay}
                   className="border border-gray-500 rounded-md p-1 m-1 w-7 hover:bg-purple-200"
                   required
                 />
@@ -200,7 +199,7 @@ export default function Configuration() {
               type="text"
               id="grade"
               name="grade"
-              placeholder="12"
+              placeholder="5"
               onChange={handleInputChange}
               value={formData.grade}
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
