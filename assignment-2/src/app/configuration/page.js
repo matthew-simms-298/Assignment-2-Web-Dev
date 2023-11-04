@@ -16,9 +16,17 @@ export default function Configuration() {
 
   useEffect(() => {
     async function loadData() {
-      await fetch("http://localhost:5000/students")
-        .then((response) => response.json())
-        .then((data) => setFormData(data));
+      try {
+        const response = await fetch("http://localhost:5000/students");
+        if (response.ok) {
+          const data = await response.json();
+          setFormData(data);
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
     loadData();
   }, []);
