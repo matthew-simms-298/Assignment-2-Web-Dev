@@ -41,22 +41,23 @@ export default function Configuration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://Localhost:5000/students", {
+      const response = await fetch("http://Localhost:5000/students", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-      setMessage("Student registered successfully!");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        birthYear: "",
-        brithMonth: "",
-        brithDay: "",
-        grade: "",
-      });
+      if(response.ok){
+        setMessage("Student registered successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          birthYear: "",
+          brithMonth: "",
+          brithDay: "",
+          grade: "",
+        });}
     } catch (error) {
       setMessage("ERROR");
     }
