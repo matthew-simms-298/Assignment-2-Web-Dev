@@ -12,8 +12,8 @@ const Student = () => {
     setSelectedOptions(selectedValue)
 
     if (selectedValue === getElementByID("1")) {
-      var placeholderText = `first Name: ${people[0].firstName}
-      last Name: ${people[0].lastName}
+      var placeholderText = `First Name: ${people[0].firstName}
+      Last Name: ${people[0].lastName}
       Birth Date: ${people[0].birthYear}/${people[0].birthMonth}/${people[0].birthDay}
       Grade: ${people[0].grade}`
     }
@@ -78,7 +78,7 @@ const Student = () => {
       <select
        
       className="flex flex-row items-center justify-center rounded-md">
-        <option>-- select student --</option>
+        <option>-- Select Student --</option>
       {people.map((person, index) => (
           <option 
           key={index} 
@@ -91,8 +91,8 @@ const Student = () => {
       </select>
       <textarea className="resize-none mt-5"
         rows={5}
-        placeholder={`first Name: ${people[0].firstName}
-last Name: ${people[0].lastName}
+        placeholder={`First Name: ${people[0].firstName}
+Last Name: ${people[0].lastName}
 Birth Date: ${people[0].birthYear}/${people[0].birthMonth}/${people[0].birthDay}
 Grade: ${people[0].grade}
         `}

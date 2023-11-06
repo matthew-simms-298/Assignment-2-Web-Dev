@@ -126,14 +126,14 @@ export default function Configuration() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-purple-200 text-black">
-      <div class="w-screen h-12 border-b-black-2 text-center flex justify-evenly">
-        <div class="w-1/2 border-r-black-2 pr-5 bg-purple-800 text-white pt-3 text-4x1">
-          <a href="/" className="text-center">
+      <div className="w-screen h-12 border-b-black-2 text-center flex justify-evenly">
+        <div className="w-1/2 border-r-black-2 pr-5 bg-purple-800 text-white pt-3 text-4x1">
+          <a href="/" className="text-center hover:underline">
             Homepage
           </a>
         </div>
-        <div class="w-1/2 border-r-black-2 pr-5 text-gray-700 bg-purple-200 pt-3 text-3x1">
-          <p class="text-center font-bold">Students</p>
+        <div className="w-1/2 border-r-black-2 pr-5 text-gray-700 bg-purple-200 pt-3 text-3x1">
+          <p className="text-center font-bold">Students</p>
         </div>
       </div>
       <div className="bg-gray-100 p-10 m-10 rounded-lg shadow-lg">
@@ -150,7 +150,7 @@ export default function Configuration() {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              placeholder="Example: DeMaximus"
+              placeholder="Example: Maxine"
               className="border border-gray-500 rounded-md p-1 m-1 hover:bg-purple-200"
               required
             />
