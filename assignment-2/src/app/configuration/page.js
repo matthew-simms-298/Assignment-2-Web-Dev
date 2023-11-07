@@ -32,13 +32,16 @@ export default function Configuration() {
   }, []);
 
   const handleInputChange = (event) => {
+    const {name, value } = event.target;
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
   };
 
-  const handleSubmit = async (e) => {
+
+
+  const handleSubmit = async e => {
     e.preventDefault();
     try {
       const response = await fetch("http://Localhost:5000/students", {
@@ -58,71 +61,13 @@ export default function Configuration() {
           brithDay: "",
           grade: "",
         });}
+        else {
+          setMessage("Something went wrong");
+        }
     } catch (error) {
-      setMessage("ERROR");
+      setMessage("There was a problem saving your application");
     }
   };
-
-  // Rest of the code...
-  // Matt: I dont think we'll need it but for now we need to figure out how to get the db connected
-  {
-    /*
-export default function Configuration() {
-  async function loadData() {
-    const response = await fetch("http://localhost:5000/students")
-      .then((response) => response.json())
-      .then((data) => setStudent(data));
-  }
-
-  const setFormData = () => {
-    const [formData, setFormData] = useState({
-      firstName: "",
-      lastName: "",
-      birthYear: "",
-      brithMonth: "",
-      brithDay: "",
-      grade: "",
-    });
-  };
-
-  const [message, setMessage] = useState("");
-
-  const handleInputChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://Localhost:5000/students", {
-        method: "POST",
-        hearders: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        setMessage("Student registered successfully!");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          birthYear: "",
-          brithMonth: "",
-          brithDay: "",
-          grade: "",
-        });
-      } else {
-        setMessage("INVALID INPUT");
-      }
-    } catch (error) {
-      setMessage("ERROR");
-    }
-  };
-*/
-  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-purple-200 text-black">
@@ -222,6 +167,7 @@ export default function Configuration() {
             </button>
           </div>
         </form>
+        {message && <div className="mt-4 text-center text-yellow-600">{message}</div>}
       </div>
       <StandardFooter />
     </main>
