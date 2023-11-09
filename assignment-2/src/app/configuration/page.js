@@ -7,8 +7,8 @@ export default function Configuration() {
     firstName: "",
     lastName: "",
     birthYear: "",
-    brithMonth: "",
-    brithDay: "",
+    birthMonth: "",
+    birthDay: "",
     grade: "",
   });
 
@@ -44,7 +44,7 @@ export default function Configuration() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await fetch("http://Localhost:5000/students", {
+      const response = await fetch("http://localhost:5000/students", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,8 +57,8 @@ export default function Configuration() {
           firstName: "",
           lastName: "",
           birthYear: "",
-          brithMonth: "",
-          brithDay: "",
+          birthMonth: "",
+          birthDay: "",
           grade: "",
         });}
         else {

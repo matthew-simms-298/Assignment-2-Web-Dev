@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch database.json --port 5000 --host 0.0.0.0 --cors"
   },
   "dependencies": {
     "react": "^18",

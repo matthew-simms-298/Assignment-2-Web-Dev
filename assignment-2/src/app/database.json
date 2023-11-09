@@ -1,58 +1,5 @@
 {
     "students" : [
-        {
-            
-            "firstName": "Matthew",
-            "lastName": "Simms",
-            "birthYear": 2004,
-            "birthMonth": 5,
-            "birthDay": 21,
-            "grade": 12,
-            "id": 1
-        },
-
-        {
-            
-            "firstName": "Ryan",
-            "lastName": "Clarkson",
-            "birthYear": 2003,
-            "birthMonth": 7,
-            "birthDay": 8,
-            "grade": 12,
-            "id": 2
-        },
-
-        {
-            
-            "firstName": "Theodore",
-            "lastName": "Wells",
-            "birthYear": 2002,
-            "birthMonth": 2,
-            "birthDay": 28,
-            "grade": 10,
-            "id": 3
-        },
-
-        {
-            
-            "firstName": "Bartholemue",
-            "lastName": "DeMarcus The 3rd",
-            "birthYear": 1865,
-            "birthMonth": 9,
-            "birthDay": 21,
-            "grade" : 152,
-            "id": 4
-        },
-
-        {
-            
-            "firstName": "Wendy",
-            "lastName": "White",
-            "birthYear": 1987,
-            "birthMonth": 4,
-            "birthDay": 30,
-            "grade": 30,
-            "id": 5
-        }
+       
     ]
 }
